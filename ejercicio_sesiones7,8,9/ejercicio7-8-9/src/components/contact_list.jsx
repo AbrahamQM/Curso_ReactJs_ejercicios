@@ -23,7 +23,7 @@ export default function ContactListComponent(){
     function remove(Contact){
         const tempContacts = [...contacts];
         const index = contacts.indexOf(Contact);
-        delete(tempContacts[index]);
+        tempContacts.splice(index, 1);
         setContacts(tempContacts);
     }
 
@@ -36,13 +36,15 @@ export default function ContactListComponent(){
 
     const Table = () => {
         return (
-            <table>
+            <table className="table table-bordered table-hover table-dark">
                 <thead>
                     <tr>
-                        <th scope='col'>Name:</th>
-                        <th scope='col'>Surname:</th>
-                        <th scope='col'>Email:</th>
-                        <th scope='col'>Tel:</th>
+                        <th scope='col'>Name</th>
+                        <th scope='col'>Surname</th>
+                        <th scope='col'>Email</th>
+                        <th scope='col'>Tel</th>
+                        <th scope='col'>State</th>
+                        <th scope='col'>Actions</th>
                     </tr>
                 </thead>
                 <tbody>

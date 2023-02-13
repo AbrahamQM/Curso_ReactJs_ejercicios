@@ -8,7 +8,7 @@ const ContactComponent = ({contact, state, remove}) =>{
 
 
     function contactStateBadge(){
-        if (contact.state){
+        if (contact?.state){
             return(
                 <h6 className='mb-0'>
                     <span className='badge bg-primary'>
@@ -31,7 +31,7 @@ const ContactComponent = ({contact, state, remove}) =>{
      * Function that returns icon depending on connected state
      */
     function contactCompletedIcon(){
-        if(contact.state){
+        if(contact?.state){
             return (<i onClick={() => state(contact)} className='bi-toggle-on contact-action' style={{color: 'green'}}></i>)
         }else{
             return (<i onClick={() => state(contact)} className='bi-toggle-off contact-action' style={{color: 'grey'}}></i>)
@@ -50,18 +50,18 @@ const ContactComponent = ({contact, state, remove}) =>{
     }
 
     return (
-        <tr className='fw-normal' style={contact.state ? contactConnected : contactDisconnected}>
+        <tr className='fw-normal' style={contact?.state ? contactConnected : contactDisconnected}>
             <th>
-                <span className='ms-2'>{contact.name}</span>
+                <span className='ms-2'>{contact?.name}</span>
             </th>
             <td className='align-middle'>
-                <span>{contact.surname}</span>
+                <span>{contact?.surname}</span>
             </td>
             <td className='align-middle'>
-                <span>{contact.tel}</span>
+                <span>{contact?.tel}</span>
             </td>
             <td className='align-middle'>
-                <span>{contact.email}</span>
+                <span>{contact?.email}</span>
             </td>
 
             <td className='align-middle'>
