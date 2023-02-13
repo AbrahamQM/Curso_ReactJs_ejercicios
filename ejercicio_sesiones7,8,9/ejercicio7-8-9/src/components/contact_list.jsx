@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Contact } from "../models/contact.class";
 import ContactForm from "./forms/contactForm";
+import ContactComponent from './contact'
 
 
-export default function ContactComponent(){
+export default function ContactListComponent(){
     const default1 = new Contact('contacto 1', 'apellidos 1', '666666666', 'contacto1@contactos.com', false);
     const default2 = new Contact('contacto 2', 'apellidos 2', '677777777', 'contacto2@contactos.com', false);
     const default3 = new Contact('contacto 3', 'apellidos 3', '688888888', 'contacto3@contactos.com', false);
@@ -45,11 +46,11 @@ export default function ContactComponent(){
                     </tr>
                 </thead>
                 <tbody>
-                    { contacts.map((Contact, index) => {
+                    { contacts.map((contact, index) => {
                         return (
                                 <ContactComponent 
                                     key={index} 
-                                    contact={Contact}
+                                    contact={contact}
                                     state={changeState}
                                     remove = {remove}
                                 >
@@ -78,7 +79,7 @@ export default function ContactComponent(){
     return (
         <div>
             <div className='col-12'>
-                <div className='card'>
+                <div className='card' >
                     {/* Card Header (title) */}
                     <div className='card-header p-3'>
                         <h5>
@@ -87,7 +88,6 @@ export default function ContactComponent(){
                     </div>
                     {/* Card Body (content) */}
                     <div className='card-body' data-mdb-perfect-scrollbar='true' style={ {position: 'relative', height: '400px'} }>
-                        {/* TODO: Add Loading Spinner */}
                         {contactsTable}
                     </div>
                 </div>

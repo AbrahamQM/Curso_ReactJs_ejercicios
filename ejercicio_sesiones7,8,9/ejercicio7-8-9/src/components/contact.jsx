@@ -40,9 +40,8 @@ const ContactComponent = ({contact, state, remove}) =>{
     
 
     const contactConnected = {
-        color: 'gray',
+        color: 'green',
         fontWeight: 'bold',
-        textDecoration: 'line-through'
     }
 
     const contactDisconnected = {
