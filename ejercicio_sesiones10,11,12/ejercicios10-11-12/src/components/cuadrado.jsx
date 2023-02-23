@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-// https://developer.mozilla.org/es/docs/Web/API/setInterval   ESTOY CON ESTO
 
-//todo se queda fallando con lo del intervalo
 let nIntervId = false;
+
 export default function Cuadrado() {
     let color = 'black' ;
     var red; 
@@ -33,8 +32,6 @@ export default function Cuadrado() {
         console.log('Intevalo limpiado')
         nIntervId = false;
     }
-
-
 
     return (
         <div style={ styleToUse }
