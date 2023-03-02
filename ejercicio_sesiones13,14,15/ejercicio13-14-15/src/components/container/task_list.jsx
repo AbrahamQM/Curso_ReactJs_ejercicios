@@ -48,14 +48,14 @@ const TaskListComponent = () => {
         tempTasks.splice(index,1);
         setTasks(tempTasks);
     }
-
-    function addTask(task){
-        console.log('Added this Task:', task);
-        const tempTasks = [...tasks];
-        console.log(tempTasks )
-        tempTasks.push(task);
-        setTasks(tempTasks);
-    }
+    //? COMENTED BECAUSE IS NOT USED HERE
+    // function addTask(task){
+    //     console.log('Added this Task:', task);
+    //     const tempTasks = [...tasks];
+    //     console.log(tempTasks )
+    //     tempTasks.push(task);
+    //     setTasks(tempTasks);
+    // }
 
     const Table = () => {
         return (
