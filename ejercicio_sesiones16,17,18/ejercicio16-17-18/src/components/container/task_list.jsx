@@ -8,7 +8,7 @@ import '../../styles/task.scss';
 
 
 
-const TaskListComponent = () => {
+const TaskListComponent = (props) => {
 
     const defaultTask1 = new Task('Example1', 'Description1', true, LEVELS.NORMAL);
     const defaultTask2 = new Task('Example2', 'Description 2', false, LEVELS.URGENT);
@@ -49,13 +49,6 @@ const TaskListComponent = () => {
         setTasks(tempTasks);
     }
     //? COMENTED BECAUSE IS NOT USED HERE
-    // function addTask(task){
-    //     console.log('Added this Task:', task);
-    //     const tempTasks = [...tasks];
-    //     console.log(tempTasks )
-    //     tempTasks.push(task);
-    //     setTasks(tempTasks);
-    // }
 
     const Table = () => {
         return (
@@ -83,6 +76,7 @@ const TaskListComponent = () => {
                     )}
                 </tbody>
             </table>
+            
         )
     }
 
@@ -124,6 +118,10 @@ const TaskListComponent = () => {
             </div>
             {/* <Taskform add={addTask} length={tasks.length}></Taskform> */}
             <TaskFormFormik tasks={tasks} setTasks={setTasks}></TaskFormFormik>
+            <br />
+            <div>
+                <button onClick={() => props.setLogged()} >Logout</button>
+            </div>
         </div>
     );
 };
